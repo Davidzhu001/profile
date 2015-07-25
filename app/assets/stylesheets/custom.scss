@@ -1,0 +1,88 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.loading {
+  left: 50%;
+  top: 50%;
+}
+.loading:after {
+  content: '';
+  background: trasparent;
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  border-radius: 90%;
+  top: -20%;
+  left: -20%;
+  opacity: 0.7;
+  box-shadow: rgba(255, 255, 255, 0.6) -4px -5px 3px -3px;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+
+/*导航栏    --开始*/
+.navigation {
+    position: fixed;
+    top:0px;
+    width: 100%;
+    min-width: 1280px;
+    z-index: 100;
+}
+.naviga-1 {
+    background: #999999;
+    opacity: 0.3;
+    width: 100%;
+    height: 100px;
+    filter:alpha(opacity=30);
+    position: absolute;
+    min-width: 1280px;
+    z-index: 98;
+}
+.naviga-2 {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    min-width: 1280px;
+    z-index: 99;
+}
+.logo {
+    width:60px
+}
+.naviga {
+     margin-top:20px;
+ }
+.naviga-btns a{
+    color:#333;
+    height: 50%;
+    width: 100%;
+}
+.naviga-logo {
+    padding-left:3em;
+}
+.naviga-text p {
+    background: #403023;
+    border-radius:1em;
+    line-height:50px;
+    margin-left:20px;
+    padding-left:4em;
+    padding-right:4em;
+    font-size:1em;
+    color:white;
+}
+.nav li a:hover {
+    color: #333;
+    opacity: 1;
+    background-color: #999999;
+}
+/*导航栏    --结束*/
+
