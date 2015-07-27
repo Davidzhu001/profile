@@ -1,6 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+// bootstrap_devise form
+.wrap_layout{
+  padding-top: 140px;
+  padding-left: 40px;
+}
+.devise_user_view_center_form
+{
+  width: 800px;
+  padding-left: 400px;
+}
 
 .loading {
   left: 50%;

@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
 gem "slim-rails"
 gem "html2slim"
+gem 'jquery-turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'owlcarousel-rails'
 # Use ActiveModel has_secure_password
@@ -33,6 +34,10 @@ gem 'owlcarousel-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'simple_form'
+gem 'rails_kindeditor'
+gem 'devise'
+gem 'devise-bootstrap-views'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

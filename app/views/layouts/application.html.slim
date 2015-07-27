@@ -2,11 +2,12 @@ doctype html
 html
   head
     title
-      | WeichengZhu
+      | Weicheng
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-  	= render "layouts/loading"
-  	.loading
-    = yield
+  = render "layouts/loading"
+  .wrap_layout
+    .outer
+      = yield

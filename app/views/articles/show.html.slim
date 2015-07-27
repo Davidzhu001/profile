@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @article.title
+p
+  strong Content:
+  = @article.content.html_safe unless @article.content.blank?
+p
+  strong Kype:
+  = @article.kype
+p
+  strong User:
+  = @article.user
+
+= link_to 'Edit', edit_article_path(@article)
+'|
+= link_to 'Back', articles_path

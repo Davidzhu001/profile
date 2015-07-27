@@ -14,5 +14,6 @@
  *= require font-awesome
  *= require owl.carousel
  *= require owl.theme
+ *= require devise_bootstrap_views
  *= require_self
  */

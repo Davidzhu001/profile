@@ -1,0 +1,10 @@
+= simple_form_for(@article) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.kindeditor :content, :langType => 'en', :items => ['fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link'] 
+    = f.input :kype, :collection => ['IT','Testimony', 'Sharing'], :default => "IT", label: false, placeholder: "Type" 
+
+  .form-actions
+    = f.button :submit

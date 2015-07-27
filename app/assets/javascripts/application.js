@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kindeditor
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require owl.carousel
 //= require turbolinks
