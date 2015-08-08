@@ -38,6 +38,8 @@ gem 'simple_form'
 gem 'rails_kindeditor'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'sweet-alert'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

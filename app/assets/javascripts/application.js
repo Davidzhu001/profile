@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require kindeditor
+//= require semantic-ui
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require owl.carousel
