@@ -1,5 +1,3 @@
-h1 Listing articles
-
 table
   thead
     tr
@@ -17,9 +15,10 @@ table
         td = article.title
         td = article.content
         td = article.kype
-        td = article.user
+        td = article.user.id if article.user.present?
         td = link_to 'Show', article
         td = link_to 'Edit', edit_article_path(article)
         td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
+
