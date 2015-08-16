@@ -1,10 +1,15 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
 
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   # GET /articles/1

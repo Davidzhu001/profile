@@ -1,24 +1,19 @@
-table
-  thead
-    tr
-      th Title
-      th Content
-      th Kype
-      th User
-      th
-      th
-      th
-
-  tbody
-    - @articles.each do |article|
-      tr
-        td = article.title
-        td = article.content
-        td = article.kype
-        td = article.user.id if article.user.present?
-        td = link_to 'Show', article
-        td = link_to 'Edit', edit_article_path(article)
-        td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
+= link_to 'New Task', new_article_path, remote: true 
+.col-xs-12.col-sm-4.col-lg-7
+  - @articles.each do |article|
+    .ui.horizontal.divider
+      | &
+    .ui.items
+      .item
+        .image.ui.small.images
+          img src="https://scontent-ord1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11751851_1702185683342889_193488858771936750_n.jpg?oh=c57e7f3b3c2242414a6128f8e333352c&oe=5675CA41" /
+        .content
+          a.header = article.title
+          .meta
+            span = article.title
+          .description
+            p
+          .extra
+            = link_to 'Show', article, class: "btn btn-primary"
+#task-form style="display:none;" 
 
