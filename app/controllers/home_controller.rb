@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 	layout 'home'
   def index
-  	@articles = Article.all
+  	@tech_articles = Article.all
   end
 end
