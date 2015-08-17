@@ -7,6 +7,6 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-  .loading
-    = render "layouts/loading"
-    = yield
+  / .loading
+  = render "layouts/loading"
+  = yield
