@@ -5,7 +5,7 @@ p
   = @article.title
 p
   strong Content:
-  = @article.content.html_safe unless @article.content.blank?
+  =sanitize @article.content unless @article.content.blank?
 p
   strong Kype:
   = @article.kype

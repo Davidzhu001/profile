@@ -113,6 +113,8 @@ GEM
     orm_adapter (0.5.0)
     owlcarousel-rails (1.1.3.3)
       jquery-rails
+    pundit (1.0.1)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -212,6 +214,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   owlcarousel-rails
+  pundit
   rails (= 4.2.1)
   rails_kindeditor
   sass-rails (~> 5.0)

@@ -1,19 +1,27 @@
-= link_to 'New Task', new_article_path, remote: true 
-.col-xs-12.col-sm-4.col-lg-7
-  - @articles.each do |article|
+.row
+  .col-xs-12.col-lg-8
+    - @articles.each do |article|
+      .ui.inverted.divider
+      .ui.items
+        .item
+          .image.ui.small.images
+            img src="https://scontent-ord1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11751851_1702185683342889_193488858771936750_n.jpg?oh=c57e7f3b3c2242414a6128f8e333352c&oe=5675CA41" /
+          .content
+            a.header = article.title
+            .meta
+              span = article.user.username if article.user.present?
+            .description
+              p
+            .extra
+              = link_to 'Show', article, class: "btn btn-success pull-right"
+  .col-xs-12.col-lg-4
     .ui.horizontal.divider
-      | &
-    .ui.items
-      .item
-        .image.ui.small.images
-          img src="https://scontent-ord1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11751851_1702185683342889_193488858771936750_n.jpg?oh=c57e7f3b3c2242414a6128f8e333352c&oe=5675CA41" /
-        .content
-          a.header = article.title
-          .meta
-            span = article.title
-          .description
-            p
-          .extra
-            = link_to 'Show', article, class: "btn btn-primary"
-#task-form style="display:none;" 
-
+      | Ad
+    - if user_signed_in?
+      = link_to 'Edit profile', edit_user_registration_path
+      = link_to "Logout", destroy_user_session_path, method: :delete
+    - else
+      = link_to "Login", new_user_session_path
+    .ui.horizontal.divider
+      | new Task
+    = link_to 'New Task', new_article_path
