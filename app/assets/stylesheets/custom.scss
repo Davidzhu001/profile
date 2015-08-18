@@ -42,10 +42,9 @@
 
 /*导航栏    --开始*/
 .navigation {
-    position: fixed;
+    position: relative;
     top:0px;
-    width: 100%;
-    min-width: 1280px;
+    width: 25%;
     z-index: 100;
 }
 .naviga-1 {
