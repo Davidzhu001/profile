@@ -24,6 +24,11 @@
           = f.label :password_confirmation
           br
           = f.password_field :password_confirmation, class: "form-control"
+        .form-group 
+          = f.fields_for :skills do |builder|
+            = render "skill_fields", :f => builder
+        .form-group
+          = link_to_add_fields "Add Answer", f, :answers 
         .form-group
           = f.label :current_password
           i
