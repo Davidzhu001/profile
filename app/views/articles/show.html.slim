@@ -1,18 +1,20 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @article.title
-p
-  strong Content:
-  =sanitize @article.content unless @article.content.blank?
-p
-  strong Kype:
-  = @article.kype
-p
-  strong User:
-  = @article.user
-
-= link_to 'Edit', edit_article_path(@article)
-'|
-= link_to 'Back', articles_path
+.row
+  .col-xs-12.col-lg-8
+	.ui.raised.very.padded.text.container.segment
+	  h2.ui.header 
+	  	= @article.title
+	  hr
+	  p
+	 	 =sanitize @article.content unless @article.content.blank?
+  .col-xs-12.col-lg-4
+    .ui.horizontal.divider
+      | Ad
+    - if user_signed_in?
+		= link_to 'Edit', edit_article_path(@article)
+		'|
+		= link_to 'Back', articles_path
+    - else
+      = link_to "Login", new_user_session_path
+    .ui.horizontal.divider
+      | new Task
+    = link_to 'New Task', new_article_path
