@@ -2,15 +2,17 @@
   .container
     .as-heading
       h3
-        | My Posts
-      p
-        | Ruby on Rails
+        | My IT-Posts
+        .btn.btn-white.btn-small
+         | read more
     .row
       -@tech_articles.each do |article|
         .col-md-4.col-sm-4
-          h4
+          hr
+          h5.white
             i.fa.fa-book
              | &nbsp;
-            =link_to article.title, article
+            =link_to truncate(article.title,  :length => 60), article, :class => "white"
           p
-            =article.title
+            = article.created_at.strftime("%d- %b- %Y")
+          hr

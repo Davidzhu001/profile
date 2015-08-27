@@ -6,7 +6,7 @@
     br
     .as-hero
       h2
-        | Who Am I?
+        | My Personal Posts
     br
     .as-shot
       .row
@@ -15,17 +15,13 @@
             |  <img src="
             = asset_path "https://scontent-ord1-1.xx.fbcdn.net/hphotos-prn2/v/t1.0-9/149327_1459095174318609_1860878838_n.jpg?oh=4f9ba53ea41adc06ccb6485036a6a651&oe=5641F5A6"
             | " alt="" class="img-thumbnail" /> 
-        .col-md-4.col-xs-4
-          h4
-            | I am A Christian Developer
-          p
-            |  My favarite languages is "Ruby"
-          p 
-            | But I love to program with HTML/CSS, JS, Swit, Applescript.
-          h4
-            | I am A Christian Guitar Player
-          p
-            | I love to player fingerstyles
+        .col-md-6.col-xs-4
+          -@tech_articles.each do |article|
+            hr
+            h6.text-muted
+              i.fa.fa-star.white
+               | &nbsp;
+              =link_to truncate(article.title,  :length => 120), article
 
 .as-download
   .container
