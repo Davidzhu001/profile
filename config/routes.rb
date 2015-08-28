@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :articles
   devise_for :users
   get 'home/index'
-
+  get 'tags/:tag', to: 'articles#index', as: :tag
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

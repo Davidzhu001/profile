@@ -3,6 +3,7 @@
 
   .form-inputs
     = f.input :title
+    = f.input :tag_list 
     = f.kindeditor :content, :langType => 'en', :items => ['fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link'] 
     = f.input :kype, :collection => ['IT','Testimony', 'Sharing'], :default => "IT", label: false, placeholder: "Type" 
 
