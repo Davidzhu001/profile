@@ -27,10 +27,14 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'owlcarousel-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+group :production do
+  gem 'thin'
+  gem 'pg'
+end
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'fog'
 gem 'simple_form'
 gem 'rails_kindeditor'
 gem 'devise'
