@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @articles = Article.all
   end
 
   # GET /articles/new

@@ -1,7 +1,5 @@
 module ApplicationHelper
 
-
-
 	def tag_cloud(tags, classes)
 	  max = tags.sort_by(&:count).last
 	  tags.each do |tag|
