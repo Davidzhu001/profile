@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150828134248) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -22,16 +25,7 @@ ActiveRecord::Schema.define(version: 20150828134248) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "articles", ["user_id"], name: "index_articles_on_user_id"
-
-  create_table "skills", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "skills", ["user_id"], name: "index_skills_on_user_id"
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -40,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150828134248) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "taggings", ["article_id"], name: "index_taggings_on_article_id"
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["article_id"], name: "index_taggings_on_article_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -65,8 +59,11 @@ ActiveRecord::Schema.define(version: 20150828134248) do
     t.string   "username"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "articles", "users"
+  add_foreign_key "taggings", "articles"
+  add_foreign_key "taggings", "tags"
 end
