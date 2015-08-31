@@ -16,15 +16,10 @@
               = link_to 'Show', article, class: "btn btn-success pull-right"
   .col-xs-12.col-lg-4
     .ui.horizontal.divider
-      | Ad
+      | Somethings
     - if user_signed_in?
       = link_to 'Edit profile', edit_user_registration_path
       = link_to "Logout", destroy_user_session_path, method: :delete
-    - else
-      = link_to "Login", new_user_session_path
-    hr
-    .ui.horizontal.divider
-      div id="tag_cloud"
-        - tag_cloud Article.tag_counts, %w[s m l] do |tag, css_class| 
-          = link_to tag.name, tag_path(tag.name), class: css_class 
-    hr
+    .tag_cloud
+      -tag_cloud Article.tag_counts, %w["s", "m", "l"] do |tag, css_class| 
+        = link_to tag.name, tag_path(tag.name), class: css_class 

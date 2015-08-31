@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -27,10 +27,14 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'owlcarousel-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+group :production do
+  gem 'thin'
+  gem 'pg'
+end
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'fog'
 gem 'simple_form'
 gem 'rails_kindeditor'
 gem 'devise'
