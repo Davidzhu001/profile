@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require kindeditor
+//= require ckeditor/init
 //= require semantic-ui
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
