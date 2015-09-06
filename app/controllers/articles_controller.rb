@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     if params[:tag]
-      @articles = Article.tagged_with(params[:tag])
+      @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page]).all
     else
-      @articles = Article.all
+      @articles = Article.paginate(:page => params[:page]).all
     end
     authorize @articles
   end

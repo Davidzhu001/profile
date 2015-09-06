@@ -38,6 +38,8 @@ gem 'fog'
 gem 'simple_form'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'carrierwave'
+
+gem 'will_paginate', '~> 3.0.6'
 gem 'mini_magick'
 gem 'devise'
 gem 'devise-bootstrap-views'
