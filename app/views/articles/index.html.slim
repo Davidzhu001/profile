@@ -3,6 +3,7 @@
     - @articles.each do |article|
       .ui.raised.very.padded.text.container.segment.ui.items
         =link_to article.title, article
+    = will_paginate @articles
   .col-xs-12.col-lg-4
     - if user_signed_in?
       .ui.cards
