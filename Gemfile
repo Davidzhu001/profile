@@ -36,7 +36,9 @@ end
 # gem 'unicorn'
 gem 'fog'
 gem 'simple_form'
-gem 'rails_kindeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
@@ -55,4 +57,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

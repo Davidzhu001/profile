@@ -15,11 +15,10 @@
                 a.fa.fa-hand-o-right support me
         .col-md-3.col-lg-3.naviga-btns
           ul.nav.nav-pills
-            li role="presentation" 
+            li role="presentation"
               -if current_page?(root_url) && !user_signed_in?
                 =link_to "Sign In", new_user_session_path
               - else
                 =link_to "Home", root_path
-            li role="#about" 
+            li role="#about"
               =link_to "Articles", articles_path
-

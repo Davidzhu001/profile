@@ -13,10 +13,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
   end
 
-
-
   private
-
+  
     def user_not_authorized(exception)
       policy_name = exception.policy.class.to_s.underscore
 

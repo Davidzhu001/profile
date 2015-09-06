@@ -6,16 +6,16 @@
     br
     .as-hero
       h2
-        | My Personal Posts
+        | Posts
     br
     .as-shot
       .row
-        .col-md-5.col-xs-4
+        .col-md-3.col-xs-4
           a[href="#"]
             |  <img src="
-            = asset_path "https://scontent-ord1-1.xx.fbcdn.net/hphotos-prn2/v/t1.0-9/149327_1459095174318609_1860878838_n.jpg?oh=4f9ba53ea41adc06ccb6485036a6a651&oe=5641F5A6"
-            | " alt="" class="img-thumbnail" /> 
-        .col-md-6.col-xs-4
+            = asset_path "bug.png"
+            | " alt="" class="img-thumbnail" height="212" width="212" />
+        .col-md-9.col-xs-4
           -@tech_articles.each do |article|
             hr
             h6.text-muted
@@ -46,9 +46,9 @@
               | 山西省芮城福尼斯英语学校 2010-2013
             p
               | San Diego Christian College 2013
-            p 
+            p
               | Bethany College of Mission 2014_
-            p 
+            p
               | Bethany Global University 2015_
             br
             br
@@ -77,6 +77,6 @@
               a[href="#"]
                 | My canlendar
             p
-              | 
+              |
             br
             br
