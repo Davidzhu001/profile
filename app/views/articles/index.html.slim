@@ -1,25 +1,23 @@
 .row
   .col-xs-12.col-lg-8
     - @articles.each do |article|
-      .ui.inverted.divider
-      .ui.items
-        .item
-          .image.ui.small.images
-            img src="https://scontent-ord1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11751851_1702185683342889_193488858771936750_n.jpg?oh=c57e7f3b3c2242414a6128f8e333352c&oe=5675CA41" /
-          .content
-            a.header = article.title
-            .meta
-              span = article.user.username if article.user.present?
-            .description
-              p
-            .extra
-              = link_to 'Show', article, class: "btn btn-success pull-right"
+      .ui.raised.very.padded.text.container.segment.ui.items
+        =link_to article.title, article
   .col-xs-12.col-lg-4
-    .ui.horizontal.divider
-      | Somethings
     - if user_signed_in?
-      = link_to 'Edit profile', edit_user_registration_path
-      = link_to "Logout", destroy_user_session_path, method: :delete
-    .tag_cloud
-      -tag_cloud Article.tag_counts, %w["s", "m", "l"] do |tag, css_class| 
-        = link_to tag.name, tag_path(tag.name), class: css_class 
+      .ui.cards
+        .card
+          .extra.content
+            .ui.two.buttons
+              = link_to 'Edit profile', edit_user_registration_path, :class => "ui basic green button"
+              = link_to 'New Article', new_article_path, :class => "ui basic red button"
+      .ui.card
+        .content
+          .header Tag Cloud
+        .content
+          h4.ui.sub.header Tags
+          .ui.small.feed
+            .event
+              .content
+                -tag_cloud Article.tag_counts, %w[teal, red, teal] do |tag, css_class|
+                  = link_to tag.name, tag_path(tag.name), class: "ui #{css_class} tag label"
