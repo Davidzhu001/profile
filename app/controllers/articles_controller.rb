@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     if params[:tag]
       @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page]).all
     else
-      @articles = Article.paginate(:page => params[:page]).all
+      @articles = Article.paginate(:page => params[:page], :per_page => 7)
     end
     authorize @articles
   end

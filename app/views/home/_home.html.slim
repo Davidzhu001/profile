@@ -6,7 +6,7 @@
     br
     .as-hero
       h2
-        | Posts
+        | New Posts
     br
     .as-shot
       .row
@@ -30,53 +30,37 @@
       h3
         | My -
         span.color
-          | Personal Information
+          | Personal Articles
     hr
     .icon-box-6.text-center
       .row
         .col-md-4.col-sm-4
           .icon-box-6-item
-            i.fa.fa-university.bg-green
+            i.fa.fa-paper-plane-o.bg-green
             h4
               a[href="#"]
-                | Education
-            p
-              | 上海群益职业学校 计算机 2009
-            p
-              | 山西省芮城福尼斯英语学校 2010-2013
-            p
-              | San Diego Christian College 2013
-            p
-              | Bethany College of Mission 2014_
-            p
-              | Bethany Global University 2015_
-            br
-            br
+                | Life events
+            -@tech_articles.each do |article|
+              p.text-left
+                hr
+                  =link_to truncate(article.title,  :length => 40), article
         .col-md-4.col-sm-4
           .icon-box-6-item
-            i.fa.fa-star.bg-red
+            i.fa.fa-train.bg-red
             h4
               a[href="#"]
-                | My Skills
-            p
-              | Guitar
-            p
-              | Ruby & Ruby on Rails
-            p
-              | Swift with IOS and Cocoa
-            p
-              | JS/ Jquery/ Ajax
-            p
-              | Applescript/ Unix / Golang
-            br
-            br
+                | Ruby on rails
+            -@tech_articles.each do |article|
+              p.left
+                hr
+                  =link_to truncate(article.title,  :length => 40), article
         .col-md-4.col-sm-4
           .icon-box-6-item
-            i.fa.fa-calendar.bg-lblue
+            i.fa.fa-apple.bg-black
             h4
               a[href="#"]
-                | My canlendar
-            p
-              |
-            br
-            br
+                | OSX and IOS
+            -@tech_articles.each do |article|
+              p.pull-left
+                hr
+                  =link_to truncate(article.title,  :length => 40), article

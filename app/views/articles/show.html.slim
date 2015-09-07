@@ -14,13 +14,13 @@
             .ui.two.buttons
               = link_to 'Edit profile', edit_user_registration_path, :class => "ui basic green button"
               = link_to 'New Article', new_article_path, :class => "ui basic red button"
-      .ui.card
-        .content
-          .header Tag Cloud
-        .content
-          h4.ui.sub.header Tags
-          .ui.small.feed
-            .event
-              .content
-                -tag_cloud Article.tag_counts, %w[teal, red, teal] do |tag, css_class|
-                  = link_to tag.name, tag_path(tag.name), class: "ui #{css_class} tag label"
+    .ui.card
+      .content
+        .header Tag Cloud
+      .content
+        h4.ui.sub.header Tags
+        .ui.small.feed
+          .event
+            .content
+              -tag_cloud Article.tag_counts, %w[teal, red, teal] do |tag, css_class|
+                = link_to tag.name, tag_path(tag.name), class: "ui #{css_class} tag label"
