@@ -40,7 +40,7 @@
             h4
               a[href="#"]
                 | Life events
-            -@tech_articles.each do |article|
+            -@tech_articles.lifeEvents.each do |article|
               p.text-left
                 hr
                   =link_to truncate(article.title,  :length => 40), article
@@ -50,7 +50,7 @@
             h4
               a[href="#"]
                 | Ruby on rails
-            -@tech_articles.each do |article|
+            -@tech_articles.rubyOnRails.each do |article|
               p.left
                 hr
                   =link_to truncate(article.title,  :length => 40), article
@@ -60,7 +60,7 @@
             h4
               a[href="#"]
                 | OSX and IOS
-            -@tech_articles.each do |article|
+            -@tech_articles.cocoaSwift.each do |article|
               p.pull-left
                 hr
                   =link_to truncate(article.title,  :length => 40), article

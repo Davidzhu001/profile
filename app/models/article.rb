@@ -2,6 +2,9 @@ class Article < ActiveRecord::Base
   belongs_to :user
 	has_many :taggings
 	has_many :tags, through: :taggings
+  scope :rubyOnRails, -> { where(kype: "Ruby on Rails") }
+  scope :lifeEvents, -> { where(kype: "lifeEvents") }
+  scope :cocoaSwift, -> { where(kype: "cocoaSwift") }
 
 	def self.tagged_with(name)
 	  Tag.find_by_name!(name).articles
@@ -9,7 +12,7 @@ class Article < ActiveRecord::Base
 
 	def self.tag_counts
 	  Tag.select("tags.id, tags.name,count(taggings.tag_id) as count").joins(:taggings).group("taggings.tag_id, tags.id, tags.name")
-	end    
+	end
 
 	def tag_list
 	  tags.map(&:name).join(", ")

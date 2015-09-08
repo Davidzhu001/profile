@@ -5,7 +5,7 @@
     = f.input :title
     = f.input :tag_list
     = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => { :height => 400 } }
-    = f.input :kype, :collection => ['IT','Rails', 'OS X'], :default => "IT", label: false, placeholder: "Type"
+    = f.input :kype, :collection => ['Ruby on Rails','lifeEvents', 'cocoaSwift'], :default => "Ruby on Rails", label: false, placeholder: "Type"
 
   .form-actions
     = f.button :submit
