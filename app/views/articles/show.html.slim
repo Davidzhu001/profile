@@ -14,6 +14,8 @@
             .ui.two.buttons
               = link_to 'Edit profile', edit_user_registration_path, :class => "ui basic green button"
               = link_to 'New Article', new_article_path, :class => "ui basic red button"
+            .ui.two.buttons
+              = link_to('Logout', destroy_user_session_path, :method => :delete, :class => "ui basic red button")
     .ui.card
       .content
         .header Tag Cloud
