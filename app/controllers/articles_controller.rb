@@ -7,11 +7,25 @@ class ArticlesController < ApplicationController
     if params[:tag]
       @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page]).all
     else
-      @articles = Article.paginate(:page => params[:page], :per_page => 7)
+      @articles = Article.rubyOnRails.paginate(:page => params[:page], :per_page => 7)
     end
     authorize @articles
   end
 
+  def personal_articles
+    if params[:tag]
+      @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page]).all
+    else
+      @articles = Article.lifeEvents.paginate(:page => params[:page], :per_page => 7)
+    end
+  end
+  def cocoa_articles
+    if params[:tag]
+      @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page]).all
+    else
+      @articles = Article.cocoaSwift.paginate(:page => params[:page], :per_page => 7)
+    end
+  end
   # GET /articles/1
   # GET /articles/1.json
   def show
