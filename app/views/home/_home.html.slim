@@ -30,16 +30,17 @@
       h3
         | My -
         span.color
-          | Personal Articles
+          | Recent Posts
     hr
     .icon-box-6.text-center
       .row
         .col-md-4.col-sm-4
           .icon-box-6-item
-            i.fa.fa-paper-plane-o.bg-green
+            i.fa.fa-pencil.bg-green
             h4
               a[href="#"]
-                | Life events
+                | Life events |&nbsp;
+                =link_to "see more", personal_articles_path, :class => "text-success"
             -@tech_articles.lifeEvents.each do |article|
               p.text-left
                 hr
@@ -49,7 +50,8 @@
             i.fa.fa-train.bg-red
             h4
               a[href="#"]
-                | Ruby on rails
+                | Ruby on rails |&nbsp;
+                =link_to "see more", articles_path, :class => "text-success"
             -@tech_articles.rubyOnRails.each do |article|
               p.left
                 hr
@@ -59,7 +61,8 @@
             i.fa.fa-apple.bg-black
             h4
               a[href="#"]
-                | OSX and IOS
+                | OSX and IOS |&nbsp;
+                =link_to "see more", cocoa_articles_path, :class => "text-success"
             -@tech_articles.cocoaSwift.each do |article|
               p.pull-left
                 hr
