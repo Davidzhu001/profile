@@ -29,6 +29,7 @@ gem 'owlcarousel-rails'
 # gem 'bcrypt', '~> 3.1.7'
 group :production do
   gem 'thin'
+  gem 'rails_12factor' 
   gem 'pg'
 end
 
