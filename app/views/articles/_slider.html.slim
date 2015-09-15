@@ -9,6 +9,15 @@
           = link_to('Logout', destroy_user_session_path, :method => :delete, :class => "ui basic red button")
 .ui.card
   .content
+    .header Categories
+  .content
+    = link_to 'Life Events', personal_articles_path, :class => "ui basic red button"
+    = link_to 'ISO OSX Developers', cocoa_articles_path, :class => "ui basic blue button"
+    = link_to 'Ruby on Rails', articles_path, :class => "ui basic black button"
+
+
+.ui.card
+  .content
     .header Tag Cloud
   .content
     h4.ui.sub.header Tags
